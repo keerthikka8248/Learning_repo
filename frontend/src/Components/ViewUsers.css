@@ -1,0 +1,54 @@
+/* ViewUsers.css */
+.view-users-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.view-users-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.view-users-error {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.view-users-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.view-users-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-users-item:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.view-users-username, .view-users-email {
+  font-size: 1rem;
+  color: #333;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: red;
+}
