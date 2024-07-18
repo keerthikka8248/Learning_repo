@@ -27,51 +27,66 @@
 }
 
 .login-container {
-  width: 400px; /* Set a fixed width for the form container */
+  width: 400px; 
   height: 400px;
-  padding: 20px; /* Add some padding for form elements */
-  border: 1px solid #ccc; /* Add a border for visual separation */
-  border-radius: 5px; /* Add rounded corners for a softer look */
-  background-color: #fff; /* Set white background for the form */
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  background-color: #fff; 
 }
 
 .login-form {
-  display: flex; /* Allow vertical stacking of form elements */
-  flex-direction: column; /* Stack elements vertically */
+  display: flex; 
+  flex-direction: column; 
 }
 
 .input-group {
-  margin-bottom: 15px; /* Add some space between input groups */
+  margin-bottom: 15px; 
+  position: relative;
 }
 
 .login-form label {
-  display: block; /* Display labels on their own line */
-  margin-bottom: 5px; /* Add some space below labels */
-  font-weight: bold; /* Make labels stand out visually */
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold;
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-  width: 100%; /* Make input fields full width */
-  padding: 10px; /* Add padding for easy typing */
-  border: 1px solid #ccc; /* Add a border for input fields */
-  border-radius: 3px; /* Add rounded corners to input fields */
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 3px; 
+  box-sizing: border-box; 
+  padding-right: 40px; 
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .log_but {
   background-color: #0080FF; 
-  color: white; /* White text color */
-  padding: 10px 20px; /* Add padding for button text */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Indicate clickable behavior */
-  margin-top: 10px; /* Add some space above the button */
+  color: white; 
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+  margin-top: 10px; 
 }
 
-.create-account{
+.create-account {
   text-align: center;
 }
-
 
 .login-success {
   display: flex;

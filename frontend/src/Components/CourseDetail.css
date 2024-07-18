@@ -1,0 +1,48 @@
+
+.course-detail-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .vertical-navbar {
+    width: 200px;
+    margin-right: 20px;
+  }
+  
+  .vertical-navbar button.active {
+    background-color: #0056b3;
+  }
+  
+  .vertical-navbar h3 {
+    margin-bottom: 20px;
+  }
+  
+  .vertical-navbar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #8199b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .vertical-navbar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .section-content {
+    flex: 1;
+    background-color: #E8E9EB;
+    padding: 10px;
+  }
+  
+  .section-content h4 {
+    margin-top: 20px;
+  }
+  
+  .section-content p {
+    margin: 10px 0;
+  }
+  

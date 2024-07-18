@@ -3,19 +3,38 @@ import './Signup.css';
 import SignupImage from '../images/log_bk.jpg';
 import { useNavigate } from 'react-router-dom';
 import tickmark from '../images/tick.gif';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [emailid, setEmailid] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(''); // State to store specific error message
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match.");
+      setShowError(true);
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:8000/signup', {
         method: 'POST',
@@ -24,35 +43,30 @@ const Signup = () => {
         },
         body: JSON.stringify({ username, emailid, password })
       });
-      
+
       if (!response.ok) {
-        // Handle potential error from backend
-        const errorData = await response.json(); // Assuming backend sends error data in JSON format
-        throw new Error(errorData.error || 'An error occurred during signup.'); // Use backend error message if available, otherwise provide a generic message
-      }
-      else{
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'An error occurred during signup.');
+      } else {
         const data = await response.json();
-        console.log('Signup Successful:', data); // Assuming you don't need to use 'data' here
-      setShowSuccess(true);
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+        console.log('Signup Successful:', data);
+        setShowSuccess(true);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
       }
-  
-      
     } catch (error) {
       console.error('Signup Error:', error.message);
       setShowError(true);
-      // Access specific error message from backend response (if available)
       setErrorMessage(error.message);
     } finally {
-      // Clear input fields after successful or failed submission
       setUsername('');
       setEmailid('');
       setPassword('');
+      setConfirmPassword('');
     }
   };
-  
+
   return (
     <div className="signup-page">
       <div className={showSuccess ? "signup-success" : "signup-container"}>
@@ -88,14 +102,39 @@ const Signup = () => {
             </div>
             <div className="input-group">
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="password-container">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <FontAwesomeIcon
+                  icon={showPassword ? faEyeSlash : faEye}
+                  className="password-icon"
+                  onClick={togglePasswordVisibility}
+                />
+              </div>
+            </div>
+            <div className="input-group">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <div className="password-container">
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+                <FontAwesomeIcon
+                  icon={showConfirmPassword ? faEyeSlash : faEye}
+                  className="password-icon"
+                  onClick={toggleConfirmPasswordVisibility}
+                />
+              </div>
             </div>
             <button className="log_but" type="submit">Create Account</button>
             {showError && (

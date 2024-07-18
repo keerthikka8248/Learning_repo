@@ -13,7 +13,7 @@ import python from '../images/python.jpg';
 import java from '../images/java.png';
 import dsa from '../images/DSA_Logo.png';
 import bk from '../images/background.jpg';
-import hero from '../images/hero.png';
+import logo1 from '../images/bird.jpg';
 import user from '../images/user.png';
 
 const courses = [
@@ -71,7 +71,7 @@ function Homepage({ isLoggedIn, userData, handleLogout }) {
 
   return (
     <div className="homepage-container">
-      <section className="background-section" style={{ backgroundImage: `url(${bk})` }}>
+       <section className="background-section" >  {/*style={{ backgroundImage: `url(${bk})` }} */}
         <header className="header">
           <div className="logo-container">
             <img src={logo} alt="Logo" className="logo" style={{ width: '80px' }} />
@@ -79,6 +79,9 @@ function Homepage({ isLoggedIn, userData, handleLogout }) {
           </div>
           <nav className="nav-links">
             <button onClick={handleToggleCourses} className={showCourses ? "nav-links hover-effect" : "nav-links"}>All Courses</button>
+            <RouterLink to="/available-courses">
+                <button className="login-button">AvailCourses</button>
+            </RouterLink>
             <input
               type="text"
               placeholder="Search courses..."
@@ -89,7 +92,7 @@ function Homepage({ isLoggedIn, userData, handleLogout }) {
             
             {isLoggedIn ? (
               <div className="user-info" onClick={handleToggleUserDetail}>
-                <img src={user} alt="User" className="user-icon" style={{ width: '80px' }} />
+                <img src={user} alt="User" className="user-icon" style={{ width: '60px' }} />
                 {showUserDetail && (
                   <div className="user-details">
                     <p>{userData.username}</p>
@@ -131,7 +134,7 @@ function Homepage({ isLoggedIn, userData, handleLogout }) {
             <p>Explore our diverse range of courses designed to foster innovation and ignite a passion for lifelong learning.</p>
           </div>
           <div className="hero-image-container">
-            <img src={hero} alt="Hero" className="hero-image" />
+            <img src={logo1} alt="Hero" className="hero-image" />
           </div>
         </div>
       </section>

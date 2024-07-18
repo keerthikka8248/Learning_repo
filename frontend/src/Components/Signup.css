@@ -1,102 +1,105 @@
 .signup-page {
-    background-color: #e6e4e0;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Center both containers horizontally */
-    align-items: center; /* Center both containers vertically */
-    position: relative;
-  }
-  
-  .signup-image-container,
-  .signup-container {
-    width: 30%; /* Consistent width for both containers */
-    height: 30%; /* Consistent height for both containers */
-    display: flex; /* Allow flexbox for centering within each container */
-    justify-content: center; /* Center content horizontally within each container */
-    align-items: center; /* Center content vertically within each container */
-    margin: 10px; /* Add spacing between containers (optional) */
-  }
-  
-  .signup-image {
-    width: 100%; /* Image fills the container's width */
-    height: 200%; /* Image fills the container's height */
-  }
-  
-  .signup-container {
-    border: 2px solid black;
-  }
+  background-color: #e6e4e0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-  .signup-page {
-    background-color: #e6e4e0; /* Light gray background */
-    display: flex; /* Allow horizontal layout for form and potential image */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    min-height: 100vh; /* Set minimum height for full viewport */
-  }
-  
-  .signup-container {
-    width: 400px; /* Set a fixed width for the form container */
-    height: 400px;
-    padding: 20px; /* Add some padding for form elements */
-    border: 1px solid #ccc; /* Add a border for visual separation */
-    border-radius: 5px; /* Add rounded corners for a softer look */
-    background-color: #fff; /* Set white background for the form */
-  }
-  
-  .signup-form {
-    display: flex; /* Allow vertical stacking of form elements */
-    flex-direction: column; /* Stack elements vertically */
-  }
-  
-  .input-group {
-    margin-bottom: 15px; /* Add some space between input groups */
-  }
-  
-  .signup-form label {
-    display: block; /* Display labels on their own line */
-    margin-bottom: 5px; /* Add some space below labels */
-    font-weight: bold; /* Make labels stand out visually */
-  }
-  
-  .signup-form input[type="text"],
-  .signup-form input[type="password"] {
-    width: 100%; /* Make input fields full width */
-    padding: 10px; /* Add padding for easy typing */
-    border: 1px solid #ccc; /* Add a border for input fields */
-    border-radius: 3px; /* Add rounded corners to input fields */
-  }
-  
-  .log_but {
-    background-color: #ff7000; /* Green color for the button */
-    color: white; /* White text color */
-    padding: 10px 20px; /* Add padding for button text */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Add rounded corners */
-    cursor: pointer; /* Indicate clickable behavior */
-    margin-top: 10px; /* Add some space above the button */
-    margin-left: 20px;
-  }
-  
-  .signup-success {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff; /* Light green background for success */
-    border: 2px solid green; /* Green border for success */
-    color: green; /* Green text color for success */
-    border-radius: 5px; /* Add rounded corners */
-    padding: 20px; /* Add padding for content */
-    text-align: center; /* Center align text */
-  }
-  
-  .signup-success img {
-    width: 100px; /* Set width for tick mark image */
-    margin-bottom: 10px; /* Add space below the image */
-  }
-  
-  .error-message{
-    color: red;
-    font-style: italic;
-    margin-left: 25px;
-  }
+.signup-image-container,
+.signup-container {
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.signup-image {
+  width: 100%;
+  height: 200%;
+}
+
+.signup-container {
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding-right: 40px; /* Space for the icon */
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.log_but {
+  background-color: #ff7000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid green;
+  color: green;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+.signup-success img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-style: italic;
+  margin-left: 25px;
+}

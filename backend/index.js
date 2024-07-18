@@ -5,7 +5,7 @@ const app = express()
 
 const {mongoose} = require("mongoose")
 
-const {User,Quiz} = require("./schema.js")
+const {User,Quiz,Course} = require("./schema.js")
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -108,6 +108,29 @@ app.post("/login", async (request, response) => {
   });
 
 
+  app.post('/add-course', async (req, res) => {
+    try {
+      const { courseId, courseName, sections, interviewQuestions, learningResources } = req.body;
+  
+      // Create a new course instance
+      const newCourse = new Course({
+        courseId,
+        courseName,
+        sections,
+        interviewQuestions,
+        learningResources
+      });
+  
+      // Save the course to the database
+      await newCourse.save();
+  
+      res.status(201).json({ message: 'Course added successfully' });
+    } catch (error) {
+      console.error('Error adding course:', error);
+      res.status(500).json({ error: 'Failed to add course' });
+    }
+  });
+
   // Route to add quiz questions
 app.post('/add-quiz', async (req, res) => {
   try {
@@ -174,9 +197,6 @@ app.post("/quiz/:conceptId/submit", async (req, res) => {
       }
     });
 
-    // You can save the score to a database here if needed
-    // This example will just return the score without saving it
-
     res.json({ score }); // Send the score as JSON
   } catch (error) {
     console.error("Error submitting quiz:", error);
@@ -207,6 +227,30 @@ app.delete('/deleteusers/:id', async (req, res) => {
     res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
     console.error('Error deleting user:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Get all courses
+app.get('/courses', async (req, res) => {
+  try {
+    const courses = await Course.find({});
+    res.send(courses);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// Get course by ID
+app.get('/courses/:courseId', async (req, res) => {
+  const { courseId } = req.params;
+  try {
+    const course = await Course.findOne({ courseId: new RegExp(`^${courseId}$`, 'i') });
+    if (!course) {
+      return res.status(404).json({ error: 'Course not found' });
+    }
+    res.json(course);
+  } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });

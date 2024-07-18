@@ -1,0 +1,202 @@
+.add-course-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-course-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .add-course-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .add-course-container input[type="text"],
+  .add-course-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .add-course-container textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .add-course-container .section-container {
+    margin-bottom: 20px;
+  }
+  
+  .add-course-container .section-container h3 {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .add-course-container .subtopic-container {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-course-container .subtopic-container h4 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .add-course-container .subtopic-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #777;
+  }
+  
+  .add-course-container .subtopic-container input[type="text"],
+  .add-course-container .subtopic-container textarea {
+    width: calc(100% - 22px); /* Adjusted for button width */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .add-course-container .subtopic-container textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .add-course-container .subtopic-container pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
+  .add-course-container .subtopic-container img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons {
+    margin-top: 10px;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons button:last-child {
+    margin-right: 0;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons input[type="file"] {
+    display: none;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons label {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .add-course-container .subtopic-container .action-buttons label:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-course-container .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .add-course-container .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-course-container .modal-content h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .add-course-container .modal-content textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .add-course-container .modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .add-course-container .modal-content button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .add-course-container .modal-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-course-container .modal-content button:last-child {
+    margin-right: 0;
+  }
+  

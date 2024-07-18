@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link  } from 'react-router-dom';
 import './CConceptsPage.css';
 
 function CppConceptsPage() {
@@ -114,98 +115,8 @@ function CppConceptsPage() {
             </p>
           </li>
         </ul>
+        <Link to="/quiz/CPP_programming" className="quiz-link">Take C++ Quiz</Link>
       </section>
-      <section className="section quiz">
-  <h2>C++ Programming Quiz</h2>
-  <p>
-    Test your knowledge of C++ programming with our interactive quiz. Answer a series of questions
-    to assess your understanding of C++ concepts and syntax.
-  </p>
-  <div className="quiz-content">
-    <div className="question">
-      <p>What is the output of the following code?</p>
-      <pre>
-        <code>
-          {`#include <iostream>
-          int main() {
-            int x = 5;
-            std::cout << x++ << std::endl;
-            return 0;
-          }`}
-        </code>
-      </pre>
-      <ul>
-        <li>5</li>
-        <li>6</li>
-        <li>Compiler error</li>
-        <li>Undefined behavior</li>
-      </ul>
-    </div>
-    <div className="question">
-      <p>What is the result of the expression `sizeof(int)`?</p>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>4</li>
-        <li>Depends on the platform (typical values are 2 or 4)</li>
-      </ul>
-    </div>
-    <div className="question">
-      <p>What will the following code output?</p>
-      <pre>
-        <code>
-          {`#include <iostream>
-          int main() {
-            char str[] = "Hello";
-            std::cout << str << std::endl;
-            return 0;
-          }`}
-        </code>
-      </pre>
-      <li>Hello</li>
-      <li>Compiler error</li>
-      <li>Undefined behavior</li>
-      <li>Depends on the platform</li>
-    </div>
-    <div className="question">
-      <p>Which function is used to dynamically allocate memory in C++?</p>
-      <ul>
-        <li>malloc()</li>
-        <li>realloc()</li>
-        <li>calloc()</li>
-        <li>new (preferred in C++)</li>
-      </ul>
-    </div>
-    <div className="question">
-      <p>What is the output of the following code?</p>
-      <pre>
-        <code>
-          {`#include <iostream>
-          int main() {
-            int x = 5;
-            std::cout << ++x << std::endl;
-            return 0;
-          }`}
-        </code>
-      </pre>
-      <ul>
-        <li>5</li>
-        <li>6</li>
-        <li>Compiler error</li>
-        <li>Undefined behavior</li>
-      </ul>
-    </div>
-    <div className="question">
-      <p>What does the `new` operator do in C++?</p>
-      <ul>
-        <li>Allocates memory on the stack</li>
-        <li>Deallocates memory (use delete for this)</li>
-        <li>Allocates memory on the heap</li>
-        <li>None of the above</li>
-      </ul>
-    </div>
-  </div>
-</section>
 </div>
   );
 }

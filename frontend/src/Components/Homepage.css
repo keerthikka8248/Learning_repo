@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  
 }
 
 
@@ -12,6 +13,7 @@ body {
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-color: #B7C9E2;
 }
 
 /* Landing Content */
@@ -68,7 +70,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid gray;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -81,6 +83,7 @@ body {
   font-style: oblique;
   margin-top: 5px; 
   font-weight: bold;
+  color: black;
 }
 
 .nav-links {
@@ -97,11 +100,9 @@ body {
 }
 
 .nav-links button {
-  margin-right: 10px;
-  border: none;
+  margin-right: 20px;
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: transparent;
   color: #333;
   cursor: pointer;
   font-weight: bold;
@@ -118,13 +119,14 @@ body {
   color: black;
   font-weight: bold;
   transform: scale(1.1);
-  border: 2px solid #ddd;
+  border: 2px solid #336699;
 }
 
 .nav-links .hover-effect {
   background-color: #fffbb3;
   color: black;
   transform: scale(1.1);
+  border: 2px solid #336699;
 }
 
 .search-bar {
@@ -208,7 +210,7 @@ body {
 }
 
 .available-courses {
-  padding: 50px;
+  padding: 5px;
   text-align: center;
   text-decoration: none; 
   color: inherit;
@@ -230,7 +232,7 @@ body {
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, background-color 0.2s ease;
-  background: linear-gradient(-135deg, #FFA500, #FFFFE0);
+  background: linear-gradient(-132deg, #FFFFCC 0%, #A2C4E3 50%, #FFD699 100%);
   text-decoration: none; 
   color: inherit;
 }
@@ -324,7 +326,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 5px; 
-  background: linear-gradient(-132deg, #87CEEB, #F5F5F5);
+  background: linear-gradient(-132deg, #FFFCCC, #FFD699);
   //#D9F4FE;
   padding: 10px; 
   border-radius: 10px;

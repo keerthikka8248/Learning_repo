@@ -1,7 +1,7 @@
 // Admin.jsx
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import admin_bk from '../images/admin_bk.jpg';
+import admin_bk from '../../images/admin_bk.jpg';
 import './Admin.css';
 
 const Admin = () => {
@@ -18,6 +18,9 @@ const Admin = () => {
         </RouterLink>
         <RouterLink to="/view-users">
           <button className="admin-button">View Users</button>
+        </RouterLink>
+        <RouterLink to="/add-course">
+          <button className="admin-button">Add Course</button>
         </RouterLink>
       </div>
     </div>
